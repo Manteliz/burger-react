@@ -2,13 +2,12 @@ import React from 'react';
 import BuildControl from './BuildControl/BuildControl';
 import classes from './BuildControls.css';
 
-const buildControls = () =>
+const INGREDIENTS = ['cheese', 'meat', 'salad', 'bacon'];
+
+const buildControls = props =>
     <div className={classes.BuildControls}>
-        <BuildControl label='cheese' />
-        <BuildControl label='meat' />
-        <BuildControl label='salad' />
-        <BuildControl label='bacon'/>
-        <div> Order Button </div>
+        {INGREDIENTS.map(ing => <BuildControl key={ing} label={ing} add={() => props.add(ing)} remove={() => props.remove(ing)}/>)}
+        <div> Order Button </div> 
     </div>;
 
 export default buildControls;
