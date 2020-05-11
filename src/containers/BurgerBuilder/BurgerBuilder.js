@@ -47,7 +47,7 @@ class BurgerBuilder extends Component {
         }
     }
 
-    orderClickedHandler = () => console.log("Ordered!");
+    orderClickedHandler = () => this.setState({purchasing: true});
 
     updatePurchasableState() {
         const ing = {...this.state.ingredients};
@@ -63,7 +63,7 @@ class BurgerBuilder extends Component {
 
         return(
             <Aux>
-                <Modal>
+                <Modal show={this.state.purchasing}>
                     <OrderSummary ingredients={this.state.ingredients} />
                 </Modal>
                 <Burger ingredients = {this.state.ingredients} />
