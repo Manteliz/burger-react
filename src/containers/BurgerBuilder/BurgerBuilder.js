@@ -51,6 +51,8 @@ class BurgerBuilder extends Component {
 
     orderCanceledHandler = () => this.setState({purchasing: false});
 
+    continueHandler = () => alert('You Continue!');
+
     updatePurchasableState() {
         const ing = {...this.state.ingredients};
         const sum = Object.values(ing).reduce((acc, curr) => acc + curr);
@@ -66,7 +68,12 @@ class BurgerBuilder extends Component {
         return(
             <Aux>
                 <Modal show={this.state.purchasing} cancel={this.orderCanceledHandler}>
-                    <OrderSummary ingredients={this.state.ingredients} />
+                    <OrderSummary 
+                        ingredients={this.state.ingredients} 
+                        canceled={this.orderCanceledHandler} 
+                        continue={this.continueHandler}
+                        price={this.state.price}
+                    />
                 </Modal>
                 <Burger ingredients = {this.state.ingredients} />
                 <BuildControls 
