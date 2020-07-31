@@ -1,9 +1,9 @@
-import React from 'react';
-import Aux from '../../../hoc/Auxilliary';
-import Button from '../../UI/Button/Button';
+import React from 'react'
+import Aux from '../../../hoc/Auxilliary'
+import Button from '../../UI/Button/Button'
 
 const orderSummary = props => {
-    const ingredients = Object.keys(props.ingredients).map( ing => <li key={ing}>{ing}: {props.ingredients[ing]}</li> );
+    const ingredients = Object.keys(props.ingredients).map( ing => <li key={ing}>{ing}: {props.ingredients[ing]}</li> )
 
     return(
         <Aux>
@@ -13,7 +13,7 @@ const orderSummary = props => {
             <Button type='Danger' clicked={props.canceled}>CANCEL</Button>
             <Button type='Success' clicked={props.continue}>CONTINUE</Button>
         </Aux>
-    );
+    )
 }
 
-export default orderSummary;
+export default orderSummary

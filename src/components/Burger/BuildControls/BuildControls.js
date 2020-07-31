@@ -1,8 +1,8 @@
-import React from 'react';
-import BuildControl from './BuildControl/BuildControl';
-import classes from './BuildControls.css';
+import React from 'react'
+import BuildControl from './BuildControl/BuildControl'
+import classes from './BuildControls.css'
 
-const INGREDIENTS = ['cheese', 'meat', 'salad', 'bacon'];
+const INGREDIENTS = ['cheese', 'meat', 'salad', 'bacon']
 
 const buildControls = props =>
     <div className={classes.BuildControls}>
@@ -20,6 +20,6 @@ const buildControls = props =>
             onClick={props.order}
             disabled={!props.purchasable}
         >ORDER NOW</button>
-    </div>;
+    </div>
 
-export default buildControls;
+export default buildControls
